@@ -1,0 +1,12 @@
+[submodule "lipchat-chatbot"]
+	path = lipchat-chatbot
+	url = https://github.com/MaastrichtU-IDS/lipchat-chatbot.git
+[submodule "lipchat-deepqa"]
+	path = lipchat-deepqa
+	url = https://github.com/MaastrichtU-IDS/lipchat-deepqa.git
+[submodule "lipchat-ontologyreasoner"]
+	path = lipchat-ontologyreasoner
+	url = https://github.com/MaastrichtU-IDS/lipchat-ontologyreasoner.git
+[submodule "lipchat-word2vec"]
+	path = lipchat-word2vec
+	url = https://github.com/MaastrichtU-IDS/lipchat-word2vec.git
