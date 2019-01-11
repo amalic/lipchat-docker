@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+
+  webserver:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - chatbot
+    ports:
+      - 80:80
+    networks: 
+      - net
+
+  chatbot:
+    image: php:7-apache
+    volumes:
+      - ./lipchat-chatbot:/var/www/html/
+    depends_on:
+      - deepqa
+      - word2vec
+      - ontologyreasoner
+    networks:
+      - net
+      
+  deepqa:
+    build: ./lipchat-deepqa
+    networks:
+      - net
+  
+  ontologyreasoner:
+    build: ./lipchat-ontologyreasoner
+    networks:
+      - net
+  
+  word2vec:
+    build: ./lipchat-word2vec
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
