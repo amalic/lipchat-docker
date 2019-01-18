@@ -11,7 +11,7 @@ services:
     ports:
       - 80:80
     networks: 
-      - net
+      - lipchat-net
 
   chatbot:
     image: php:7-apache
@@ -22,23 +22,23 @@ services:
       - word2vec
       - ontologyreasoner
     networks:
-      - net
+      - lipchat-net
       
   deepqa:
     build: ./lipchat-deepqa
     networks:
-      - net
+      - lipchat-net
   
   ontologyreasoner:
     build: ./lipchat-ontologyreasoner
     networks:
-      - net
+      - lipchat-net
   
   word2vec:
     build: ./lipchat-word2vec
     networks:
-      - net
+      - lipchat-net
 
 networks:
-  net:
+  lipchat-net:
     driver: bridge
