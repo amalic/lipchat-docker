@@ -20,16 +20,16 @@ services:
     volumes:
       - ./lipchat-chatbot:/var/www/html/
     depends_on:
-      - deepqa
+      #- deepqa
       - word2vec
       - ontologyreasoner
     networks:
       - lipchat-net
       
-  deepqa:
-    build: ./lipchat-deepqa
-    networks:
-      - lipchat-net
+  #deepqa:
+  #  build: ./lipchat-deepqa
+  #  networks:
+  #    - lipchat-net
   
   ontologyreasoner:
     build: ./lipchat-ontologyreasoner

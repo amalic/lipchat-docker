@@ -11,6 +11,9 @@ http {
     upstream ontologyreasoner {
       server ontologyreasoner:80;
     }
+    upstream deepqa {
+      server deepqa:80;
+    }
     
  
     server {
@@ -43,6 +46,14 @@ http {
             proxy_set_header   X-Forwarded-Host $server_name;
         }
  
+        location /qa {
+            proxy_pass         http://deepqa;
+            proxy_redirect     off;
+            proxy_set_header   Host $host;
+            proxy_set_header   X-Real-IP $remote_addr;
+            proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header   X-Forwarded-Host $server_name;
+        }
     }
  
 }
