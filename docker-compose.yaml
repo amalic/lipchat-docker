@@ -10,6 +10,8 @@ services:
       - chatbot
     ports:
       - 80:80
+    #environment:
+    #  - VIRTUAL_HOST=lipchat.dumontierlab.com
     networks: 
       - lipchat-net
 
