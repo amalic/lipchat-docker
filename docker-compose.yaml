@@ -8,12 +8,14 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - chatbot
+      - word2vec
+      - ontology
     #ports:
     #  - 80:80
     environment:
       - VIRTUAL_HOST=lipchat.mooo.com
     networks: 
-      - lipchat-net
+      - lipchatnet
 
   chatbot:
     image: php:7-apache
@@ -21,20 +23,20 @@ services:
       - ./lipchat-chatbot:/var/www/html/
     depends_on:
       - word2vec
-      - ontologyreasoner
+      - ontology
     networks:
-      - lipchat-net
+      - lipchatnet
       
   ontology:
     build: ./lipchat-ontologyreasoner
     networks:
-      - lipchat-net
+      - lipchatnet
   
   word2vec:
     build: ./lipchat-word2vec
     networks:
-      - lipchat-net
+      - lipchatnet
 
 networks:
-  lipchat-net:
+  lipchatnet:
     driver: bridge
