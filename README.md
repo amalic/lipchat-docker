@@ -19,4 +19,4 @@ docker compose up -d
 ```
 
 ## Test
-Navigate to http://localhost
+Once the initial build has finished navigate to http://localhost
