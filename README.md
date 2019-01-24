@@ -15,7 +15,7 @@ wget https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=shari
 
 ## Run
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 ## Test
