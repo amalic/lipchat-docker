@@ -1,16 +1,22 @@
 # lipchat-docker
 
-## Clone this repository
+## Build and Run
+### Get the code
+```bash
+git clone --recursive <this-repository-url>
+cd lipchat-docker
 
 ```
-git clone --recursive <this repo url>
+### Get a prebuilt model
+```bash
+wget https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing \
+  -O lipchat-word2vec/model/GoogleNews-vectors-negative300.bin.gz
 ```
 
-## Additional Requirements
-* Download the bin file at https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit?usp=sharing 
-* Extract it into `lipchat-word2vec/model` directory
+## Run
+```bash
+docker compose up -d
+```
 
-## Run it via docker-compose
-```
-docker compose up
-```
+## Test
+Navigate to http://localhost
